@@ -18,5 +18,8 @@
     "watchify": "^2.1.1",
     "vinyl-source-stream": "^1.0.0",
     "cheerio": "cheeriojs/cheerio"
+  },
+  "scripts": {
+    "gen-cert": "openssl req -new -x509 -keyout key.pem -out cert.pem -days 365 -nodes"
   }
 }
