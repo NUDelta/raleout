@@ -9,13 +9,9 @@
 
 	 const JQUERY_FILE = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js";
 
-	 const HTML_TEXT = ""
-	 + "<ul>"
-	 + "	<li class='dwy-dom-node'>html</li>"
-	 + "	<li class='dwy-dom-node'>Test 1</li>"
-	 "	<li class='dwy-dom-node'>Test 1</li>"
+	 const HTML_FILE = "panel.html"
 
-	 const HTML_NODE_CLASS = "dwy-panel";
+	 const HTML_NODE_CLASS = "angular-panel";
 
 	/************************
 	 * HTML
@@ -30,7 +26,7 @@
 		console.log("appended div " + htmlNode);
 	}
 
-	appendDiv(HTML_TEXT, HTML_NODE_CLASS);
+	appendDiv(HTML_FILE, HTML_NODE_CLASS);
 
 	/************************
 	 * CSS
