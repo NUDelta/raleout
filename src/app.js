@@ -8,7 +8,7 @@ global.app = function () {
 };
 
 
-function cheeriod (html) {
+function cheerio(html) {
 	if(!error) {
 		console.log('do we get here?');
     	var name;
