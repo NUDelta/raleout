@@ -9,6 +9,9 @@ var _ = require('lodash');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var cheerio = require('cheerio');
+var https = require('https');
+
+
 
 var config = {
   entryFile: './src/app.js',
@@ -48,6 +51,14 @@ gulp.task('build', ['build-persistent'], function() {
 });
 
 gulp.task('watch', ['build-persistent'], function() {
+  httpProxy.createServer({
+  ssl: {
+    key: fs.readFileSync('key.pem', 'utf8'),
+    cert: fs.readFileSync('cert.pem', 'utf8')
+  },
+  target: 'https://localhost:35729',
+  secure: true // Depends on your needs, could be false.
+}).listen(443);
 
   browserSync({
     server: {
