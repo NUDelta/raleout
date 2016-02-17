@@ -7,6 +7,8 @@
 	 const CSS_FILE = "panel.css";
 	 const JS_FILE = "panel.js";
 
+	 const INTROJS = "https://cdn.jsdelivr.net/intro.js/2.0.0/intro.min.js";
+	 const INTROJS_CSS = "https://cdn.jsdelivr.net/intro.js/2.0.0/introjs.min.css";
 	 const JQUERY_FILE = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js";
 
 	 const HTML_TEXT = ""
@@ -15,7 +17,7 @@
 	 + "	<li class='dwy-dom-node'>Test 1</li>"
 	 "	<li class='dwy-dom-node'>Test 1</li>"
 
-	 const HTML_NODE_CLASS = "angular-panel";
+	 const HTML_NODE_CLASS = "raleout-panel";
 
 	/************************
 	 * HTML
@@ -49,6 +51,7 @@
 	}
 
 	appendCss(CSS_PATH);
+	appendCss(INTROJS_CSS);
 
 	/************************
 	 * JS
@@ -81,5 +84,9 @@
 	 	}
 	 }
 
-	 appendJsCheckAndThen(JQUERY_FILE, "jQuery", function() { appendJs(JS_PATH)});
+	 appendJsCheckAndThen(JQUERY_FILE, "jQuery", function() {
+	  appendJs(JS_PATH)	});
+
+	appendJs(INTROJS);
+
 })();
