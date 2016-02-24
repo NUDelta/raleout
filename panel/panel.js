@@ -66,12 +66,9 @@
 			var keys = 	Object.keys(methodList[i]);
 
 			if (methodList[i]['pseudoEl']){
-				console.log('did i get here?');
 				var pseudoEl = methodList[i]['pseudoEl']["0"]["pseudoClass"];
-				console.log(pseudoEl);
 				var styleKeys = Object.keys(methodList[i]['pseudoEl']["0"]['cssSpec']);
 				var match = methodList[i]['pseudoEl']["0"]['cssSpec'];
-				console.log(styleKeys);
 				var values = getElementStyleValues(styleKeys, el, pseudoEl);
 
 				var contentr =values['content'];
@@ -89,12 +86,10 @@
 				}
 			} else {
 				var styleKeys = Object.keys(methodList[i]['cssSpec']);
-				console.log(styleKeys);
 				var match = methodList[i]['cssSpec'];
 				var values = getElementStyleValues(styleKeys, el);
 				var displayr = values['display'];
 				if (match['display'].test(displayr)) {
-
 					console.log('found an example of ' + name);
 					console.log(values);
 					return values;
