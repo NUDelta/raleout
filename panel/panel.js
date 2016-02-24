@@ -1,6 +1,4 @@
 
-//window.getComputedStyle(document.querySelector('.clearfix'), ':before')
-
 // given a CSS Property, get all HTML elements with that property
 
 (function () {
@@ -33,7 +31,7 @@
 
 	}
 
-	traverseChildren(document.querySelector("body"), function(){
+	/*traverseChildren(document.querySelector("body"), function(){
 		if(){
 
 		}else{
@@ -44,6 +42,8 @@
 			re.match
 		}
 	});
+*/
+introJs().start();
 
 	// write higher level functions that include all the ways to check HTML attributes, all the CSS attributes, look through HTML children for structural attributes
 	
