@@ -20,7 +20,7 @@
 	 const HTML_NODE_CLASS = "raleout-panel";
 
 	/************************
-	 * HTML
+	 * HTMLe 
 	 ************************/
 
 	// Append HTML

@@ -1,28 +1,52 @@
-(function() {
+
+//window.getComputedStyle(document.querySelector('.clearfix'), ':before')
+
+// given a CSS Property, get all HTML elements with that property
+
+(function () {
 	console.log("panel.js imported ayeee");
-	var url = window.location.href;
-	console.log(url);
+	// given an element and an array of properties, retrieve their corresponding values
+	// from the element's computed styles
+	var getElementStyleValues = function (el, pseudo, styleKeysArr) {
+		var styleObj = window.getComputedStyle(el, pseudo);
+		var valuesObj = {};
+		var currentStyle;
 
-	html = document.getElementsByClassName('ng-scope');
-	console.log(html);
+		for (var i = 0; i < styleKeysArr.length; i++) {
+			currentStyle = styleKeysArr[i];
+			values[currentStyle] = styleObj[currentStyle];
+		}
 
+		return valuesObj;
+	}
 
-/* $.get(url, function(data) {
-		var $log = $( "#log" ),
-		html = $.parseHTML( data ),
+	// determine whether to include a node based on its
+	// class/id names and/or children
+	var traverseChildren = function (el, fn) {
+		fn(el);
 
-  		nodeNames = [];
-  		console.log(data);
-  		console.log(html);
-			//if it's a ng-directive
-			if(html.match(/(ng)/)){
-				nodeNames.push(name);
-				console.log('hello');
+		if(el.children.length > 0){
+			for (var i = 0; i < el.children.length; i++) {
+				traverseChildren(el.children[i], fn); 
 			}
+		}
 
-		console.log(nodeNames);
-		
+	}
+
+	traverseChildren(document.querySelector("body"), function(){
+		if(){
+
+		}else{
+			var re = /[clearfix|clr|cf]/g;
+			clearfix
+			clr
+			cf
+			re.match
+		}
 	});
-*/
+
+	// write higher level functions that include all the ways to check HTML attributes, all the CSS attributes, look through HTML children for structural attributes
+	
+	
 
 })();
