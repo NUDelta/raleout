@@ -65,32 +65,45 @@
 			var name = methodList[i]["name"];
 			var keys = 	Object.keys(methodList[i]);
 
-
-
 			if (methodList[i]['pseudoEl']){
 				console.log('did i get here?');
-				var pseudoEl = methodList[i]['pseudoEl'];
+				var pseudoEl = methodList[i]['pseudoEl']["0"]["pseudoClass"];
 				console.log(pseudoEl);
-				var styleKeys = methodList[i]['cssSpec'];
+				var styleKeys = Object.keys(methodList[i]['pseudoEl']["0"]['cssSpec']);
+				var match = methodList[i]['pseudoEl']["0"]['cssSpec'];
+				console.log(styleKeys);
 				var values = getElementStyleValues(styleKeys, el, pseudoEl);
-				console.log(values[0]);
+
+				var contentr =values['content'];
+				var displayr = values['display'];
+				var clearr = values['clear'];
+
+
+				if (match['content'].test(contentr) && 
+					match['display'].test(displayr) &&
+					match['clear'].test(clearr) ){
+
+					console.log('found an example of ' + name);
+					console.log(values);
+					return values
+				}
 			} else {
-				var styleKeys = methodList[i]['cssSpec'];
+				var styleKeys = Object.keys(methodList[i]['cssSpec']);
+				console.log(styleKeys);
+				var match = methodList[i]['cssSpec'];
 				var values = getElementStyleValues(styleKeys, el);
-				console.log(values);
+				var displayr = values['display'];
+				if (match['display'].test(displayr)) {
 
-			}
-
-			if (typeof values != typeof undefined) {
-				console.log('found an example of ' + name);
-				console.log(values);
-				return values
-				
-			} else {
-				console.log('nothing found sry try again bye');
-			}
+					console.log('found an example of ' + name);
+					console.log(values);
+					return values;
+				}
+			}	
 			
 		}
+
+		console.log("clearfix isn't found");
 
 	}
 
