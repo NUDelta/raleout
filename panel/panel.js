@@ -57,8 +57,14 @@
 	var findClearFix = function(methodList) {
 		if (typeof document.getElementsByClassName("clearfix")[0] != typeof undefined){
 			var el = document.getElementsByClassName("clearfix")[0];
+			el.setAttribute("data-intro", "We found an example of clearfix!");
+			console.log(el);
+
 		} else {
 			var el = document.getElementsByClassName("cf")[0];
+			el.setAttribute("data-intro", "We found an example of clearfix!");
+			console.log(el);
+
 		}
 		
 		for (var i = 0; i < methodList.length; i++) {
@@ -129,42 +135,8 @@
 		}
 	});
 */
-
-      function startIntro(){
-        var intro = introJs();
-          intro.setOptions({
-            steps: [
-              { 
-                intro: "Hello world!"
-              },
-              {
-                element: document.querySelector('.cf'),
-                intro: "This is a tooltip."
-              },
-              {
-                element: document.querySelectorAll('#step2')[0],
-                intro: "Ok, wasn't that fun?",
-                position: 'right'
-              },
-              {
-                element: '#step3',
-                intro: 'More features, more fun.',
-                position: 'left'
-              },
-              {
-                element: '#step4',
-                intro: "Another step.",
-                position: 'bottom'
-              },
-              {
-                element: '#step5',
-                intro: 'Get it, use it.'
-              }
-            ]
-          });
-          intro.start();
-      }
-     startIntro();
+	introJs().start();
+	console.log("intro?????");
 
 	// write higher level functions that include all the ways to check HTML attributes, all the CSS attributes, look through HTML children for structural attributes
 	
