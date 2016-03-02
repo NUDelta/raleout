@@ -57,12 +57,11 @@
 	var findClearFix = function(methodList) {
 		if (typeof document.getElementsByClassName("clearfix")[0] != typeof undefined){
 			var el = document.getElementsByClassName("clearfix")[0];
-			el.setAttribute("data-intro", "We found an example of clearfix!");
 			console.log(el);
 
 		} else {
 			var el = document.getElementsByClassName("cf")[0];
-			el.setAttribute("data-intro", "We found an example of clearfix!");
+
 			console.log(el);
 
 		}
@@ -88,7 +87,6 @@
 
 					console.log('found an example of ' + name);
 					console.log(values);
-					return values
 				}
 			} else {
 				var styleKeys = Object.keys(methodList[i]['cssSpec']);
@@ -97,14 +95,16 @@
 				var displayr = values['display'];
 				if (match['display'].test(displayr)) {
 					console.log('found an example of ' + name);
+
 					console.log(values);
-					return values;
 				}
 			}	
 			
 		}
+		el.setAttribute("data-intro", "We found an example of clearfix! \n\n" + JSON.stringify(values) + "\n" + el.innerHTML);
+		el.setAttribute("data-hint", "Clearfix");
+		return values 
 
-		console.log("clearfix isn't found");
 
 	}
 
