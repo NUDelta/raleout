@@ -12,7 +12,7 @@
 	 const JQUERY_FILE = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js";
 
 	 const HTML_TEXT = ""
-	 + "<li id = 'log' data-intro = 'hello there'>"
+	 + "<li id = 'log'>"
 	 + "	<li class='dwy-dom-node'>html</li>"
 	 + "	<li class='dwy-dom-node'>Test 1</li>"
 	 "	<li class='dwy-dom-node'>Test 1</li>"
