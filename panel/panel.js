@@ -101,7 +101,9 @@
 			}	
 			
 		}
-		el.setAttribute("data-intro", "We found an example of clearfix! \n\n" + JSON.stringify(values) + "\n" + el.innerHTML);
+		var cfHtmlString = "<div class='cf-example'> <h4 class='cf-heading'>Micro Clearfix detected</h4> <div class='left'> <div class='cf-container cf-micro'> <div class='one'>I'm floated</div> <div class='two'>I'm floated too</div> </div> <p class='below'>I should appear below everything else</p> </div> <div class='right'> <h4 class='cf-heading'>Code</h5><pre class='cf-code'><code>.cf-micro:before, .cf-micro:after {\n    content: ' ';\n    display: table;\n}\n.cf-micro:after {\n    clear: both;\n}\n.cf-micro {\n    *zoom: 1;\n} </pre></code> </div> </div>";
+
+		el.setAttribute("data-intro", "We found an example of clearfix! \n\n" + "\n" + cfHtmlString);
 		el.setAttribute("data-hint", "Clearfix");
 		return values 
 

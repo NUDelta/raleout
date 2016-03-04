@@ -9,3 +9,69 @@
 	flex-direction: column;
 	background-color: white;
 }
+
+.cf-heading {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.cf-example {
+  margin-bottom: 50px;
+}
+
+.cf-container {
+  background-color: #eaeaea;
+  padding: 20px;
+}
+
+pre.cf-code {
+  background-color: #f7f7f7;
+  margin: 20px 0 10px 0;
+  padding: 0;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  font-size: 80%;
+}
+
+.one,
+.two {
+  float: left;
+  width: 50%;
+  padding: 20px;
+  height: 100px;
+}
+
+.one { background-color: #08B2E3; }
+.two { background-color: #B22A6C; }
+
+.alert.difference {
+  padding: 10px;
+  border: 1px solid #FF9696;
+  border-radius: 5px;
+  background-color: #FFC7C7;
+  color: #C40000;
+}
+
+span.difference {
+  color: red;
+}
+
+/***********************/
+/* clearfix techniques */
+/***********************/
+
+/* "micro" */
+
+.cf-micro:before,
+.cf-micro:after {
+  content: " ";
+  display: table;
+}
+
+.cf-micro:after {
+  clear: both;
+}
+
+.cf-micro {
+  *zoom: 1;
+} 

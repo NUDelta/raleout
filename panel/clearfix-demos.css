@@ -1,0 +1,134 @@
+/* base styling */
+
+body {
+  height: 100%;
+  background-color: #fff;
+}
+
+div { box-sizing: border-box; }
+
+@media (min-width: 600px) {
+  .wrapper {
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  .left {
+    float: left;
+    width: 48%;
+  }
+
+  .right {
+    float: right;
+    width: 48%;
+  }
+}
+
+/* block styles */
+
+.cf-example {
+  margin-bottom: 50px;
+}
+
+.container {
+  background-color: #eaeaea;
+  padding: 20px;
+}
+
+pre {
+  background-color: #f7f7f7;
+  margin: 10px 0;
+  padding: 0;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+}
+
+.one,
+.two {
+  float: left;
+  width: 50%;
+  padding: 20px;
+  height: 100px;
+}
+
+.one { background-color: #08B2E3; }
+.two { background-color: #B22A6C; }
+
+.alert.difference {
+  padding: 10px;
+  border: 1px solid #FF9696;
+  border-radius: 5px;
+  background-color: #FFC7C7;
+  color: #C40000;
+}
+
+span.difference {
+  color: red;
+}
+
+/***********************/
+/* clearfix techniques */
+/***********************/
+
+/* "micro" */
+
+.cf-micro:before,
+.cf-micro:after {
+  content: " ";
+  display: table;
+}
+
+.cf-micro:after {
+  clear: both;
+}
+
+.cf-micro {
+  *zoom: 1;
+}
+
+/* extra div */
+
+.cf-div {
+  clear: both;
+  outline: 1px solid red;
+}
+
+/* overflow techniques */
+
+.short-container {
+  height: 75px;
+}
+
+.cf-ov-auto {
+  overflow: auto;
+}
+
+.cf-ov-scroll {
+  overflow: scroll;
+}
+
+.cf-ov-hidden {
+  overflow: hidden;
+}
+
+/* display techniques */
+
+.cf-table-cell {
+  display: table-cell;
+  outline: 2px solid red;
+}
+
+.cf-inline-block {
+  display: inline-block;
+  outline: 2px solid red;
+}
+
+/* position techniques */
+
+.cf-pos-absolute-wrapper {
+  position: relative;
+  background-color: red;
+}
+.cf-pos-absolute {
+  position: absolute;
+}

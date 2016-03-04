@@ -1,0 +1,269 @@
+
+   <!-- no clearfix -->
+   <div class="no-cf">
+    <h1>No Clearfix</h1>
+    <div class="cf-micro">
+
+      <div class="left">
+        <div class="container">
+          <div class="one">I'm floated</div>
+          <div class="two">I'm floated too</div>
+        </div>
+        <p class="below">I should appear below everything else</p>
+      </div>
+
+      <div class="right">
+        <pre><code>
+   /* uses default browser styles */
+        </pre></code>
+      </div>
+
+    </div>
+  </div> <!-- end no clearfix -->
+
+<!-- micro clearfix -->
+<div class="cf-example">
+  <h1>Micro</h1>
+  <div class="cf-micro">
+
+    <div class="left">
+      <div class="container cf-micro">
+        <div class="one">I'm floated</div>
+        <div class="two">I'm floated too</div>
+      </div>
+      <p class="below">I should appear below everything else</p>
+    </div>
+
+    <div class="right">
+      <pre><code>
+  .cf-micro:before,
+  .cf-micro:after {
+    content: " ";
+    display: table;
+  }
+
+  .cf-micro:after {
+    clear: both;
+  }
+
+  .cf-micro {
+    *zoom: 1;
+  }
+      </pre></code>
+    </div>
+
+  </div>
+</div> <!-- end micro clearfix -->
+
+<!-- extra div -->
+<div class="cf-example">
+  <h1>Extra &lt;div&gt;</h1>
+  <div class="cf-micro">
+
+    <div class="left">
+      <div class="container">
+        <div class="one">I'm floated</div>
+        <div class="two">I'm floated too</div>
+      </div>
+      <div class="cf-div"></div>
+      <p class="below">I should appear below everything else</p>
+    </div>
+
+    <div class="right">
+      <pre><code>
+  &lt;div class="cf-div"&gt;&lt;/div&gt;
+      </pre></code>
+      <pre><code>
+  .cf-div {
+    clear: both;
+    outline: 1px solid red;
+  }
+      </pre></code>
+    </div>
+
+  </div>
+</div> <!-- end extra div -->
+
+<!-- overflow techniques -->
+<div class="cf-example">
+    <h1>Overflow techniques</h1>
+    
+    <!-- overflow auto -->
+<div class="cf-example">
+  <h2>overflow: auto</h1>
+  <div class="cf-micro">
+
+    <div class="left">
+      <div class="container cf-ov-auto">
+        <div class="one">I'm floated</div>
+        <div class="two">I'm floated too</div>
+      </div>
+      <p class="below">I should appear below everything else</p>
+    </div>
+
+    <div class="right">
+      <pre><code>
+  .cf-ov-auto {
+    overflow: auto;
+  }
+      </pre></code>
+    </div>
+
+  </div>
+</div> <!-- end overflow auto -->
+
+  <div class="alert difference">The following examples demonstrate what happens when our container has a <strong>fixed height</strong> and one of our floated elements is too tall to fit.</div>
+
+  <!-- overflow scroll -->
+<div class="cf-example">
+  <h2>overflow: scroll</h1>
+  <div class="cf-micro">
+
+    <div class="left">
+      <div class="container cf-ov-scroll short-container">
+        <div class="one"><span class="difference">I'm floated and taller than my container</span></div>
+        <div class="two">I'm floated too</div>
+      </div>
+      <p class="below">I should appear below everything else</p>
+    </div>
+
+    <div class="right">
+      <pre><code>
+  .short-container {
+    height: 75px;
+  }
+  
+  .cf-ov-scroll {
+    overflow: scroll;
+  }
+      </pre></code>
+    </div>
+
+  </div>
+</div> <!-- end overflow scroll -->
+
+<!-- overflow hidden -->
+<div class="cf-example">
+  <h2>overflow: hidden</h1>
+  <div class="cf-micro">
+
+    <div class="left">
+      <div class="container cf-ov-hidden short-container">
+        <div class="one"><span class="difference">I'm floated and taller than my container</span></div>
+        <div class="two">I'm floated too</div>
+      </div>
+      <p class="below">I should appear below everything else</p>
+    </div>
+
+    <div class="right">
+      <pre><code>
+  .short-container {
+    height: 75px;
+  }
+  
+  .cf-ov-hidden {
+    overflow: hidden;
+  }
+      </pre></code>
+    </div>
+
+  </div>
+</div> <!-- end overflow hidden -->
+
+<!-- display techniques -->
+
+  
+<div class="cf-example">
+    <h1>Display techniques</h1>
+    
+  <div class="alert difference">The following examples demonstrate the <strong>shrink-wrapping side effect</strong> characteristic of using display and position systems</div>
+  
+    <!-- display table cell -->
+<div class="cf-example">
+  <h2>display: table-cell;</h2>
+  <div class="cf-micro">
+
+    <div class="left">
+      <div class="container cf-table-cell">
+        <div class="one">I'm floated</div>
+        <div class="two">I'm floated too</div>
+      </div>
+      <p class="below">I should appear below everything else</p>
+    </div>
+
+    <div class="right">
+      <pre><code>
+  .cf-table-cell {
+    display: table-cell;
+  }
+      </pre></code>
+    </div>
+
+  </div>
+</div> <!-- end display table cell -->
+
+<!-- display inline block -->
+<div class="cf-example">
+  <h2>display: inline-block;</h2>
+  <div class="cf-micro">
+
+    <div class="left">
+      <div class="container cf-inline-block">
+        <div class="one">I'm floated</div>
+        <div class="two">I'm floated too</div>
+      </div>
+      <p class="below">I should appear below everything else</p>
+    </div>
+
+    <div class="right">
+      <pre><code>
+  .cf-inline-block {
+    display: inline-block;
+  }
+      </pre></code>
+    </div>
+
+  </div>
+</div> <!-- end display inline block -->
+
+
+<!-- position techniques -->
+<div class="cf-example">
+    <h1>Position techniques</h1>
+
+  <!-- position absolute -->
+<div class="cf-example">
+    <div class="alert difference">Absolutely-positioned elements</div>
+  <h2>position: absolute</h2>
+
+  
+ 
+  <div class="cf-micro">
+
+    <div class="left">
+      <div class="cf-pos-absolute-wrapper">
+        <div class="container cf-pos-absolute">
+        <div class="one">I'm floated</div>
+        <div class="two">I'm floated too</div>
+      </div>
+      <p class="below">I should appear below everything else</p>
+      </div>
+    </div>
+
+    <div class="right">
+      <pre><code>
+  .cf-pos-absolute-wrapper {
+    position: relative;
+    background-color: red;
+  }
+  
+  .cf-pos-absolute {
+    position: absolute;
+  }
+      </pre></code>
+    </div>
+
+  </div>
+</div> <!-- end position absolute -->
+    
+</div>
