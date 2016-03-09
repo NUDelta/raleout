@@ -3,6 +3,7 @@ var fs = require('fs');
 var browserify = require('browserify');
 var watchify = require('watchify');
 var babelify = require('babelify');
+var reactify = require('reactify');
 var rimraf = require('rimraf');
 var source = require('vinyl-source-stream');
 var _ = require('lodash');
@@ -10,8 +11,6 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var cheerio = require('cheerio');
 var https = require('https');
-
-
 
 var config = {
   entryFile: './src/app.js',
@@ -35,6 +34,7 @@ function getBundler() {
 function bundle() {
   return getBundler()
     .transform(babelify)
+    .transform(reactify)
     .bundle()
     .on('error', function(err) { console.log('Error: ' + err.message); })
     .pipe(source(config.outputFile))
